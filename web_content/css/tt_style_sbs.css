@@ -1,0 +1,154 @@
+.tt_container {
+  width: 100vw;
+  padding: 2.5vw;
+  min-width: 500px;
+}
+
+#tt_altcontainer {
+  height: 100vh;
+  text-align: center;
+}
+
+#header {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.indexNum {
+  vertical-align: bottom;
+  font-size: 28;
+}
+
+#successtext {
+  width: 50%;
+}
+
+#gamepanel {
+  width: 95vw;
+  min-width: 475px;
+  height: 40vw;
+  min-height: 200px;
+  margin-bottom: 5px;
+  text-align: justify;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
+}
+
+#ratings {
+  width: 100%;
+  height: 130px;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  text-align: justify;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
+}
+
+.gamescreen {
+  width: 40vw;
+  min-width: 200px;
+  height: 40vw;
+  min-height: 200px;
+  display: inline-block;
+  border: 2px solid;
+}
+
+#tools {
+  width: 12vw;
+  min-width: 60px;
+  height: 40vw;
+  min-height: 200px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#innertools {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.tool {
+  width: 10vw;
+  min-width: 50px;
+  height: 10vw;
+  min-height: 50px;
+  margin: auto;
+  border: 2px solid;
+}
+
+.stretch {
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+}
+
+#slider_marks {
+  width: 100%;
+}
+
+.is_span {
+    display: inline-block;
+    font-size: 14pt;
+}
+
+#is_l {
+    text-align: left;
+    margin-right: 20px;
+}
+
+#is_r {
+    text-align: right;
+    margin-left: 20px;
+}
+
+#is_c {
+    text-align: center;
+}
+
+#buttonrow {
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.buttonspacer {
+  width: 41%;
+  height: 10px;
+  display: inline-block;
+  background-color: red;
+}
+
+#buttoncontainer {
+  align: center;
+  display: inline-block;
+}
+
+#slider_button {
+  text-align: center;
+}
+
+#rating_words {
+    text-align: center;
+    font-size: 18pt;
+}
+
+.blank {
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
+  display: none;
+}

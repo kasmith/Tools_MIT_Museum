@@ -1,0 +1,38 @@
+#rating_div {
+    width: 750px;
+}
+
+#slider_marks {
+    width: 750px;
+
+}
+
+.is_span {
+    text-align: center;
+    font-size: 14pt;
+}
+
+#is_l {
+    float: left;
+    margin-right: 10px;
+}
+
+#is_r {
+    float: right;
+    margin-left: 10px;
+}
+
+#is_c {
+    position: relative;
+    display: block;
+}
+
+#rating_words {
+    text-align: center;
+    font-size: 18pt;
+}
+
+#ask_action {
+    text-align: center;
+    font-size: 18pt;
+}

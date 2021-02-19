@@ -1,0 +1,79 @@
+.container {
+    border-style: solid;
+    margin: auto;
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.file_object {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.tool_canv {
+    margin: auto;
+    display: inline-block;
+    border-style: solid;
+    height: 90px;
+    width: 90px;
+}
+
+.tool_div {
+    display: inline-block;
+    margin: auto;
+    vertical-align: center:
+    padding-top: 10px;
+}
+
+.tool_options {
+    float: left;
+    margin-left: 5px;
+}
+
+.tool_button {
+    margin: auto;
+    vertical-align: center;
+}
+
+.selector {
+    margin: auto;
+    display: inline-block;
+    background-color: white;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.draw {
+    margin: auto;
+    display: inline-block;
+    background-color: white;
+    border-width:2px;
+    border-style: solid;
+}
+
+#builder_top {
+    margin: auto;
+    display: inline-block;;
+}
+
+#file_menu {
+    height: 600px;
+    width: 200px;
+    vertical-align: top;
+}
+
+#build_screen {
+    border-style: solid;
+}
+
+#options {
+    height: 600px;
+    width: 240px;
+    vertical-align: top;
+}
+
+#selections {
+    height: 180px;
+    width: 1040px;
+}

@@ -1,0 +1,121 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : Aug 31, 2016, 2:40:48 PM
+    Author     : ksmith
+*/
+
+#successtext {
+    width: 750px;
+    height: 50px;
+    text-align: center;
+    font-size: 24pt;
+    margin: auto;
+}
+
+#gametable {
+    width: 750px;
+    height: 620px;
+    border-style: solid;
+    margin: auto;
+    padding: 5px;
+    background-color: white;
+}
+
+#gamescreen {
+    width: 600px;
+    height: 600px;
+    float: left;
+}
+
+#buttons {
+    width: 116px;
+    height: 596px;
+    float: left;
+    margin-left: 10px;
+    background-color: white;
+    border: 1px solid;
+}
+
+#resetbutton {
+    width: 40px;
+    height: 40px;
+    display:block;
+    margin: auto;
+    margin-top: 30px;
+    width: 33%;
+    border: 2px solid;
+}
+
+#submitdiv {
+    width: 300px;
+    margin: auto;
+    margin-left: 20px;
+}
+
+.SelectButton {
+    width: 90px;
+    height: 90px;
+    display: block;
+    background-color: grey;
+    margin: auto;
+    margin-top: 10px;
+    border: 2px solid;
+}
+
+.spacer {
+    height: 20px;
+}
+
+.notif {
+    margin: auto;
+    width: 110px;
+    margin-top: 20px;
+}
+
+.notetext {
+    text-align: center;
+    display: block;
+    font-size: 16pt;
+}
+
+#retbutton {
+    margin: auto;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+
+#mpos {
+    text-align: left;
+    font-size: 16pt;
+}
+
+.textbox {
+    border: solid 2px black;
+    text-align: center;
+    display: table;
+}
+
+.textbox p {
+    font-size: 24pt;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.qErr {
+  text-align: riqght;
+  display: block;
+  font-size: 10pt;
+  color: red;
+  font-style: italic;
+}

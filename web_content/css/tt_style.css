@@ -1,0 +1,188 @@
+#tt_wrapper {
+  height: 100vmin;
+  width: 100vmin;
+  min-width: 450px;
+  min-height: 450px;
+}
+
+
+.tt_container {
+  width: 100%;
+  height: 100%;
+}
+
+#tt_textcenter {
+  display: table;
+  height: 90%;
+  margin: auto;
+}
+
+#tt_text {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 5vmin;
+  text-align: center;
+}
+
+#tt_textholder {
+  margin: 2%;
+  width: 96%;
+  height: 96%;
+  text-align: center;
+  border: 3px solid;
+  position: relative;
+}
+
+#next_holder {
+  margin-top: 2%;
+  height: 6%;
+  text-align: center;
+}
+
+#next_button {
+  margin: 0 auto;
+}
+
+#header {
+  width: 100%;
+  height: 4%;
+  margin: .5% 0px;
+  text-align: center;
+  font-size: 3vmin;
+}
+
+.indexNum {
+  vertical-align: bottom;
+  font-size: 28;
+}
+
+#successtext {
+  font-size: 3vmin;
+}
+
+#gamepanel {
+  width: 100%;
+  height: 75%;
+  text-align: justify;
+  margin: 0 auto;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
+  padding: 0 3%;
+}
+
+#ratings {
+  width: 100%;
+  height: 19%;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  margin: .5% 0px;
+  text-align: justify;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
+}
+
+.gamescreen {
+  width: 75vmin;
+  height: 75vmin;
+  display: inline-block;
+  border: 2px solid;
+}
+
+#tools {
+  width: 18%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#innertools {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.tool {
+  width: 90%;
+  height: calc(18/75 * 90%);
+  margin: auto;
+  border: 2px solid;
+}
+
+.stretch {
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+}
+
+#slider_marks {
+  width: 100%;
+}
+
+.is_span {
+    display: inline-block;
+    font-size: 2vmin;
+}
+
+#is_l {
+    text-align: left;
+    margin-right: 20px;
+}
+
+#is_r {
+    text-align: right;
+    margin-left: 20px;
+}
+
+#is_c {
+    text-align: center;
+}
+
+#buttonrow {
+  width: 100%;
+  margin-top: 2%;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#buttoncontainer {
+  align: center;
+  display: inline-block;
+}
+
+#slider_button {
+  text-align: center;
+  font-size: 2vmin;
+}
+
+#rating_words {
+    text-align: center;
+    font-size: 3vmin;
+}
+
+#idxholder {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.nidx {
+  font-size: 3vmin;
+  text-align: center;
+  width: 100%
+}
+
+.blank {
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
+  display: none;
+}
