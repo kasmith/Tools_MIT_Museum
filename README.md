@@ -1,6 +1,6 @@
 # Virtual Tools handoff for MIT museum
 
-This should include the code required to run the online version of Virtual Tools as found through the the (website)[http://scripts.mit.edu/~k2smith/toolgames/]. Note that this excludes code for executing the experiments or modeling.
+This should include the code required to run the online version of Virtual Tools as found through the the [website](http://scripts.mit.edu/~k2smith/toolgames/). Note that this excludes code for executing the experiments or modeling.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Below are instructions to start up the Virtual Tools game on a local machine. Th
 
 The first part of the setup is recreating a database with the levels and structure to record data. This database is stored in the `tools_mit_museum.sql` file in the root directory, but must be loaded into an SQL server. If you have a pre-existing SQL server, you should be able to import that file to a new database (e.g., called 'tools_mit_museum').
 
-If you do not have a pre-existing SQL server, you will need to install one locally. An easy way to do this is with (MySQL)[https://www.mysql.com/]. This will allow you to host an SQL server on your own computer. If you use this, you may need to set up the database to use "Legacy Password Encryption". Then you can use a SQL browser such as (Sequel Ace)[https://github.com/Sequel-Ace] to connect to that database on the `127.0.0.1:3306`, and import the `tools_mit_museum.sql` file into the database.
+If you do not have a pre-existing SQL server, you will need to install one locally. An easy way to do this is with [MySQL](https://www.mysql.com/). This will allow you to host an SQL server on your own computer. If you use this, you may need to set up the database to use "Legacy Password Encryption". Then you can use a SQL browser such as [Sequel Ace](https://github.com/Sequel-Ace) to connect to that database on the `127.0.0.1:3306`, and import the `tools_mit_museum.sql` file into the database.
 
 ### Setting up the PHP database connections
 
@@ -18,15 +18,15 @@ Once you have the database set up, you will need to tell the program where that 
 
 ### Starting up PHP
 
-In order to run the Virtual Tools game, your system must be able to run PHP. If you do not already have it, you can download the (code here)[https://www.php.net/].
+In order to run the Virtual Tools game, your system must be able to run PHP. If you do not already have it, you can download the [code here](https://www.php.net/).
 
-Once you have installed PHP, navigate to `Tools_MIT_Museum/web_content` in a terminal, then start a PHP server (e.g., using `php -S 0.0.0.0:8000`). Then open a web browser and go to the address (`0.0.0.0:8000`)[http://0.0.0.0:8000/].
+Once you have installed PHP, navigate to `Tools_MIT_Museum/web_content` in a terminal, then start a PHP server (e.g., using `php -S 0.0.0.0:8000`). Then open a web browser and go to the address [`0.0.0.0:8000`](http://0.0.0.0:8000/).
 
 ## Virtual Tools Game parts
 
-The default site that this program brings up is the same as the main (Virtual Tools Game site)[http://scripts.mit.edu/~k2smith/toolgames/], snapshotted as of 2/18/21. Here you can select which level you want to play from a selection of those used in the paper, along with a set of other levels used for follow-up experiments and testing.
+The default site that this program brings up is the same as the main [Virtual Tools Game site](http://scripts.mit.edu/~k2smith/toolgames/), snapshotted as of 2/18/21. Here you can select which level you want to play from a selection of those used in the paper, along with a set of other levels used for follow-up experiments and testing.
 
-We have also included an extensible set of levels that can be accessed through (`community_levels.php`)[http://0.0.0.0:8000/community_levels.php]. These are levels built with a "level editor", that can be accessed by clicking on "edit" on that page, or the "Build your own" button at the bottom of the list.
+We have also included an extensible set of levels that can be accessed through [`community_levels.php`](http://scripts.mit.edu/~k2smith/toolgames/community_levels.php). These are levels built with a "level editor", that can be accessed by clicking on "edit" on that page, or the "Build your own" button at the bottom of the list.
 
 While the level editor is not particularly well documented and missing some of the more recent features built into the game, it does demonstrate how a level designer in the museum could work. When designing each level, at a bare minimum you will need to create the three tools, as well as a goal area (using a container) and an object that should go into that goal. Once the level is built, it must be solvable to be recorded -- you can ensure this by clicking on "Attempt Trial" in the upper left corner to play the level. Once you have accomplished the goal a form will open up for you to name the level and record it. This form also has a password that we put in place to ensure people we didn't know couldn't flood the database (since it is open to the internet) -- this password is `cocosci`.
 
@@ -62,7 +62,7 @@ Note that `name` is an object identifier (used later to set up goal conditions).
 
 ### Testing new levels
 
-Once you have made a new level in the script, the output is a JSON file. The easiest way to test these is to go to the editor through the (community levels)[http://0.0.0.0:8000/community_levels.php] and click the `Load` button.
+Once you have made a new level in the script, the output is a JSON file. The easiest way to test these is to go to the editor through the [community levels](http://0.0.0.0:8000/community_levels.php) and click the `Load` button.
 
 One you are satisfied with the level and want to add it as a permanent level, you'll have to edit the `trial_list` table from the database, and add another row with the output JSON as the `TrialData`.
 
@@ -72,7 +72,7 @@ One you are satisfied with the level and want to add it as a permanent level, yo
 
 The "guts" of the Virtual Tools Game is a set of code defined in the `PhysicsGaming` folder. This is a wrapper around the Chipmunk 2D physics engine that defines the allowable objects, and sets up the goals and relationships to run the level and test whether it has been solved. The most important parts of this code are the `PGWorld` object definition and its methods (to create objects, set goals, etc.), as well as the `loadFromDict` function that takes a JavaScript dictionary (pulled from the database) and turns it into a defined `PGWorld` object.
 
-This code as written to be run locally with `node.js` (so that it could be used for modeling as well), which means that it needs to be adapted to run on the web. This has already been done, but if anything changes in the PhysicsGaming code (unlikely), it can be rebuild with the `installGaming.sh` script (so long as you have the (browserify)[http://browserify.org/] and (minify)[https://www.npmjs.com/package/minify] packages). This will create the `/web_content/js/PhysicsGaming.js` file and associated minified version.
+This code as written to be run locally with `node.js` (so that it could be used for modeling as well), which means that it needs to be adapted to run on the web. This has already been done, but if anything changes in the PhysicsGaming code (unlikely), it can be rebuilt with the `installGaming.sh` script (so long as you have the [browserify](http://browserify.org/) and [minify](https://www.npmjs.com/package/minify) packages). This will create the `/web_content/js/PhysicsGaming.js` file and associated minified version.
 
 There is also a `ToolsGaming` folder that contains a wrapper around `PhysicsGaming` objects for making and saving levels. Here this is only used in trial creation for the `ToolPicker.save` method (see above section).
 
