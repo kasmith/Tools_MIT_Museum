@@ -51,10 +51,11 @@ var trname = "<?php echo $trnm; ?>";
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-
-        <div id="fullcontainer" class="col-lg-12" style="width: 740px;">
+      <div class="container">
+        <div id="fullcontainer" class="col-lg-12">
 
             <div id="successtext">Loading...</div>
+
 
             <div id="gametable">
 
@@ -82,6 +83,10 @@ var trname = "<?php echo $trnm; ?>";
 
             </div>
 
+            <div id="instructtext">
+              Tap on an object on the right to select it, then tap on the screen where you want to drop the object.
+            </div>
+
             <br>
 
             <div id="retbutton" class="row">
@@ -95,6 +100,7 @@ var trname = "<?php echo $trnm; ?>";
             <div id="mpos" style="display: none;"></div>
 
         </div>
+      </div>
 
     </body>
 

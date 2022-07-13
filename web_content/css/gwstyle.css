@@ -8,11 +8,34 @@ and open the template in the editor.
     Author     : ksmith
 */
 
+html, body, .container {
+  height: 100%;
+}
+
+.container {
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
 #successtext {
     width: 750px;
     height: 50px;
     text-align: center;
     font-size: 24pt;
+    margin: auto;
+}
+
+#instructtext {
+    width: 750px;
+    text-align: center;
+    font-size: 18pt;
     margin: auto;
 }
 
@@ -54,6 +77,11 @@ and open the template in the editor.
     width: 300px;
     margin: auto;
     margin-left: 20px;
+}
+
+#fullcontainer{
+  width: 800px;
+  position: absolute;
 }
 
 .SelectButton {
