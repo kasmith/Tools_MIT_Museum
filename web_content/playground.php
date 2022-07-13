@@ -62,6 +62,7 @@ var trname = "<?php echo $trnm; ?>";
                 <canvas id="gamescreen" height="600" width="600"></canvas>
 
                 <div id="buttons">
+                  <div class="buttoncontainer">
                     <canvas id="obj1" class="SelectButton" height="90" width="90"></canvas>
                     <canvas id="obj2" class="SelectButton" height="90" width="90"></canvas>
                     <canvas id="obj3" class="SelectButton" height="90" width="90"></canvas>
@@ -79,6 +80,7 @@ var trname = "<?php echo $trnm; ?>";
                         <span class="notetext">Score:</span>
                         <span id="score" class="notetext">0</span>
                     </div>
+                  </div>
                 </div>
 
             </div>

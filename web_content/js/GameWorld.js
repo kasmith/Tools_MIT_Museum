@@ -19,7 +19,9 @@ function assert(exp, message) {
 
 function getMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
-    return [evt.clientX - rect.left, evt.clientY - rect.top];
+    var hratio = 600/canvas.clientHeight;
+    var wratio = 600/canvas.clientWidth;
+    return [(evt.clientX - rect.left)*wratio, (evt.clientY - rect.top)*hratio];
 }
 
 
@@ -277,7 +279,7 @@ GameWorld.prototype.onMouseDown = function(mpos, me) {
 		} else {
 			nocol = false
 		}
-    
+
 
     // Nothing happens unless there's an active shape and it's still okay to be placed
     if (act !== null && !me.shapeSet && nocol) {
@@ -444,8 +446,8 @@ ToolButton.prototype.disable = function() {
 };
 
 ToolButton.prototype.draw = function() {
-    var w = this.button.offsetWidth,
-        h = this.button.offsetHeight;
+    var w = this.button.width,
+        h = this.button.width;
 
     var ctx = this.button.getContext('2d');
 
