@@ -46,7 +46,7 @@ $trdat = $trialinfo[$trnm];
 <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/PhysicsGaming.js" type="text/javascript"> </script>
-<script src="js/GameWorld.js" type="text/javascript"></script>
+<script src="js/GameWorld_DnD.js" type="text/javascript"></script>
 <script src="js/php_helpers.js" type="text/javascript"></script>
 
 <script>
@@ -125,7 +125,7 @@ var trname = "<?php echo $trnm; ?>";
         set_score();
 
         var canv = document.getElementById('gamescreen');
-        var gw = loadToolPickerFromJSON(trdata, 'gamescreen', 'resetbutton', 'remtime', 'successtext');
+        var gw = loadToolPickerFromJSON(trdata, 'gamescreen', 'resetbutton', 'remtime', 'successtext', 'instructtext');
         gw.draw();
         gw.setWinCallback(function(gwc) {
             recordSuccess(trname);

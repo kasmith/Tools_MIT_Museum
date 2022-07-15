@@ -82,10 +82,9 @@ GameWorld = function(canvName, tools, resetName, remName, sucName, worldData, su
     } else {
         this.sucText.innerText = sucTxt;
     }
-
     this.instructTxt = document.getElementById(instructName)
     assert(this.instructTxt !== null, "Must provide a legitimate document element for instructName");
-    this.instructTxt.innerText = "Tap on an object on the right to select it, then tap on the screen where you want to drop the object. . Press the reset button below the tools to try again."
+    this.instructTxt.innerText = "Drag one of the three tools from the right side of the screen onto the playing field and lift your finger to drop it. Press the reset button below the tools to try again."
 
     this.worldDat = worldData;
 
@@ -109,16 +108,22 @@ GameWorld = function(canvName, tools, resetName, remName, sucName, worldData, su
         var mpos = getMousePos(me.canvas, evt);
         me.onMouseOver(mpos, me);
     };
-    var omdown = function(evt) {
+    var omup = function(evt) {
         var mpos = getMousePos(me.canvas, evt);
-        me.onMouseDown(mpos, me);
+        me.onMouseUp(mpos, me);
     };
+    var omup_general = function(evt) {
+      me.resetTools()
+      me.drawTools()
+      me.draw()
+    }
     this.canvas.addEventListener('mousemove', omover);
-    this.canvas.addEventListener('click', omdown);
+    this.canvas.addEventListener('mouseup', omup);
+    document.defaultView.addEventListener('mouseup', omup_general)
 
     // Keep around the links for descrution
     this.omo = omover;
-    this.omd = omdown;
+    this.omd = omup;
 
     // Check -- should we draw the tools as red or blue?
     var gc = this.pgw.goalCond
@@ -265,7 +270,7 @@ GameWorld.prototype.onMouseOver = function(mpos, me) {
 
 };
 
-GameWorld.prototype.onMouseDown = function(mpos, me) {
+GameWorld.prototype.onMouseUp = function(mpos, me) {
 
     var act = me.activeShape;
     var invert = function(pt) {
@@ -439,7 +444,7 @@ ToolButton = function(buttonid, polys, parent) {
 
 ToolButton.prototype.enable = function() {
     var me = this;
-    this.button.onclick = function() {
+    this.button.onmousedown = function() {
         me.press();
     };
 };
