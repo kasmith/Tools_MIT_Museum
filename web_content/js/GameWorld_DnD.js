@@ -24,6 +24,13 @@ function getMousePos(canvas, evt) {
     return [(evt.clientX - rect.left)*wratio, (evt.clientY - rect.top)*hratio];
 }
 
+function getTouchPos(canvas, evt) {
+  var rect = canvas.getBoundingClientRect();
+  var hratio = 600/canvas.clientHeight;
+  var wratio = 600/canvas.clientWidth;
+  var touch = evt.touches[0] || evt.changedTouches[0]
+  return [(touch.pageX - rect.left)*wratio, (touch.pageY - rect.top)*hratio]
+}
 
 function cbow() {
     console.log('Hurray!!!!');
@@ -108,6 +115,16 @@ GameWorld = function(canvName, tools, resetName, remName, sucName, worldData, su
         var mpos = getMousePos(me.canvas, evt);
         me.onMouseOver(mpos, me);
     };
+    var otouchmove = function(evt) {
+        var tpos = getTouchPos(me.canvas, evt)
+        me.onMouseOver(tpos, me)
+    }
+    var otouchend = function(evt) {
+      var tpos = getTouchPos(me.canvas, evt)
+      if (tpos[0] > 0 && tpos[0] < 600 && tpos[1] > 0 && tpos[1] < 600) {
+        me.onMouseUp(tpos, me)
+      }
+    }
     var omup = function(evt) {
         var mpos = getMousePos(me.canvas, evt);
         me.onMouseUp(mpos, me);
@@ -120,6 +137,10 @@ GameWorld = function(canvName, tools, resetName, remName, sucName, worldData, su
     this.canvas.addEventListener('mousemove', omover);
     this.canvas.addEventListener('mouseup', omup);
     document.defaultView.addEventListener('mouseup', omup_general)
+
+    document.defaultView.addEventListener('touchend', otouchend)
+    document.defaultView.addEventListener('touchmove', otouchmove)
+    document.defaultView.addEventListener('touchend', omup_general)
 
     // Keep around the links for descrution
     this.omo = omover;
@@ -444,14 +465,19 @@ ToolButton = function(buttonid, polys, parent) {
 
 ToolButton.prototype.enable = function() {
     var me = this;
-    this.button.onmousedown = function() {
+    this.button.onmousedown = function(evt) {
+        me.press();
+    };
+    this.button.ontouchstart = function(evt) {
+        evt.preventDefault()
         me.press();
     };
 };
 
 ToolButton.prototype.disable = function() {
     //this.button.removeAttribute('onclick');
-    this.button.onclick = function() {return;};
+    this.button.onmousedown = function() {return;};
+    this.button.ontouchstart = function() {return}
 };
 
 ToolButton.prototype.draw = function() {
